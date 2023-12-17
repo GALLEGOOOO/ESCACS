@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  max-width: 500px; /* 400 */
+  border: 2px solid #333;
+}
+
+.chessboard > div {
+  width: 62.5px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+
+.chessboard > div:nth-child(odd) {
+  background-color: #333;
+}
+/* Todas las celdas impares del tablero 
+(primer, tercer, quinto, etc.) tendrán un 
+fondo de color #333 (gris oscuro). */
+
+.chessboard > div:nth-child(even) {
+  background-color: #FFF;
+}
+/* Todas las celdas pares del tablero
+(segundo, cuarto, sexto, etc.) tendrán un
+fondo de color #FFF (blanco). */
+
+.chessboard > div:nth-child(16n+1),
+.chessboard > div:nth-child(16n+3),
+.chessboard > div:nth-child(16n+5),
+.chessboard > div:nth-child(16n+7) {
+  background-color: #FFF;
+}
+
+.chessboard > div:nth-child(16n+2),
+.chessboard > div:nth-child(16n+4),
+.chessboard > div:nth-child(16n+6),
+.chessboard > div:nth-child(16n+8) {
+  background-color: #333;
+}
